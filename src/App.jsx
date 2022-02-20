@@ -1,43 +1,20 @@
-import { BrowserRouter as Router } from 'react-router-dom';
-import { Switch, Route } from 'react-router';
-import './App.css';
 import React from 'react';
-import Home from './components/Home';
-import About from './components/About';
 import Navbar from './components/Navbar';
-
-const routes = [
-  {
-    exact: true,
-    path: '/',
-    component: () => <Home />,
-  },
-  {
-    exact: true,
-    path: '/about',
-    component: () => <About />,
-  },
-];
+import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import Home from './pages/Home';
+import About from './pages/About';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">{/* <Navbar /> */}</header>
-      <Router>
+    <BrowserRouter>
+      <div className="pt-20">
+        <Navbar />
         <Switch>
-          {routes.map((route) => {
-            return (
-              <Route
-                key={route.path}
-                exact={route.exact}
-                path={route.path}
-                render={route.component}
-              />
-            );
-          })}
+          <Route path="/" component={Home} exact />
+          <Route path="/about" component={About} exact />
         </Switch>
-      </Router>
-    </div>
+      </div>
+    </BrowserRouter>
   );
 }
 

@@ -7,7 +7,7 @@ import About from './pages/About';
 function App() {
   return (
     <BrowserRouter>
-      <div className="pt-20">
+      <div className="pt-20 h-screen">
         <Navbar />
         <Switch>
           <Route path="/" component={Home} exact />

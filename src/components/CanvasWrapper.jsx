@@ -47,12 +47,12 @@ function Scene() {
         rotation={[-Math.PI / 2, 0, Math.PI / 2]}
       />
 
-      <EffectComposer multisampling={8}>
+      <EffectComposer multisampling={4}>
         <Bloom
-          kernelSize={3}
+          kernelSize={4}
           luminanceThreshold={0}
-          luminanceSmoothing={2}
-          intensity={0.4}
+          luminanceSmoothing={3}
+          intensity={0.5}
         />
       </EffectComposer>
     </Suspense>
@@ -61,14 +61,14 @@ function Scene() {
 
 function Ground(props) {
   const [floor, normal] = useTexture([
-    '/src/static/images/floor_img.jpg',
-    '/src/static/images/floor_normal_map.jpg',
+    '/images/floor_img.jpg',
+    '/images/floor_normal_map.jpg',
   ]);
   return (
     <mesh rotation={[-Math.PI / 2, 0, Math.PI / 2]} {...props}>
       <planeGeometry args={[10, 8]} />
       <MeshReflectorMaterial
-        resolution={1024}
+        resolution={512}
         args={[8, 8]}
         color="#f0f0f0"
         metalness={0}

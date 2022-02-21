@@ -30,11 +30,7 @@ function Navbar() {
           href="https://www.instagram.com/pacocroket/"
           className="flex items-center py-4 px-2"
         >
-          <img
-            src="/src/static/favicon.svg"
-            alt="Logo"
-            className="h-8 w-8 mr-2"
-          />
+          <img src="favicon.svg" alt="Logo" className="h-8 w-8 mr-2" />
           <h1 className="font-semibold text-gray-500 text-lg">
             Croket Light Art
           </h1>

@@ -1,8 +1,7 @@
-<p align="center">
-  <h1>Croket Light Art</h1>
-</p>
+# Vue 3 + Vite
 
-This website is the virtual glass door into the Atelier Croket, where curiosity, tech and art meet.
+This template should help get you started developing with Vue 3 in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
 
-Explore here the mad scientist experiments and prototypes. Alternatively, have a look at our instagram account [@pacroket](https://www.instagram.com/pacocroket/). 
+## Recommended IDE Setup
 
+- [VS Code](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar)

@@ -4,17 +4,17 @@
   >
     <div id="mask0" class="absolute inset-0">
       <video ref="vid1ref" class="aspect-video w-full" muted>
-        <source src="assets/videos/Redgitter.m4v" type="video/mp4" />
+        <source src="../assets/videos/Redgitter.mp4" type="video/mp4" />
       </video>
     </div>
     <div id="mask1" class="absolute inset-0">
       <video ref="vid2ref" class="aspect-video w-full" muted>
-        <source src="assets/videos/Lightning.m4v" type="video/mp4" />
+        <source src="../assets/videos/Lightning.mp4" type="video/mp4" />
       </video>
     </div>
     <div id="mask2" class="absolute inset-0">
       <video ref="vid3ref" class="aspect-video w-full" muted>
-        <source src="assets/videos/Feedback.m4v" type="video/mp4" />
+        <source src="../assets/videos/Feedback.mp4" type="video/mp4" />
       </video>
     </div>
     <div

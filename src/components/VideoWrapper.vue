@@ -27,19 +27,25 @@
 <script setup>
 import { gsap } from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
-import { onMounted, ref } from 'vue';
+import { onMounted, ref, watch } from 'vue';
 gsap.registerPlugin(ScrollTrigger);
 
 const vid1ref = ref();
 const vid2ref = ref();
 const vid3ref = ref();
 const loaded = ref(false);
+const vidsLoaded = ref(0);
 
 onMounted(() => {
-  setTimeout(() => {
-    loaded.value = true;
-    resetAllVideos();
-  }, 1000);
+  vid1ref.value.onloadeddata = () => {
+    vidsLoaded.value++;
+  };
+  vid2ref.value.onloadeddata = () => {
+    vidsLoaded.value++;
+  };
+  vid3ref.value.onloadeddata = () => {
+    vidsLoaded.value++;
+  };
 
   gsap.to('#mask0', {
     clipPath: 'polygon(100% 0, 100% 0%, 100% 100%, 100% 100%)',
@@ -90,6 +96,16 @@ onMounted(() => {
   };
 });
 
+watch(
+  () => vidsLoaded.value,
+  () => {
+    if (vidsLoaded.value >= 2) {
+      loaded.value = true;
+      resetAllVideos();
+    }
+  }
+);
+
 function resetAllVideos() {
   resetVideo(vid1ref.value);
   resetVideo(vid2ref.value);
@@ -97,7 +113,6 @@ function resetAllVideos() {
 }
 
 function resetVideo(videoEl) {
-  videoEl.pause();
   videoEl.currentTime = 0;
   videoEl.play();
 }
